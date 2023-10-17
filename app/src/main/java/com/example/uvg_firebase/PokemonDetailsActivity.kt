@@ -28,14 +28,14 @@ class PokemonDetailsActivity : AppCompatActivity() {
 
         btnUpdate.setOnClickListener {
             openUpdateDialog(
-                intent.getStringExtra("pkId").toString(),
-                intent.getStringExtra("pkName").toString()
+                intent.getStringExtra("PkId").toString(),
+                intent.getStringExtra("PkName").toString()
             )
         }
 
         btnDelete.setOnClickListener {
             deleteRecord(
-                intent.getStringExtra("pkId").toString()
+                intent.getStringExtra("PkId").toString()
             )
         }
 
@@ -52,10 +52,10 @@ class PokemonDetailsActivity : AppCompatActivity() {
     }
 
     private fun setValuesToViews() {
-        tvPkId.text = intent.getStringExtra("pkId")
-        tvPkName.text = intent.getStringExtra("pkName")
-        tvPkLv.text = intent.getStringExtra("pkLv")
-        tvPkWeight.text = intent.getStringExtra("pkWeight")
+        tvPkId.text = intent.getStringExtra("PkId")
+        tvPkName.text = intent.getStringExtra("PkName")
+        tvPkLv.text = intent.getStringExtra("PkLv")
+        tvPkWeight.text = intent.getStringExtra("PkWeight")
 
     }
 
@@ -92,9 +92,9 @@ class PokemonDetailsActivity : AppCompatActivity() {
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
-        etEmpName.setText(intent.getStringExtra("pkName").toString())
-        etEmpAge.setText(intent.getStringExtra("pkLv").toString())
-        etEmpSalary.setText(intent.getStringExtra("pkWeight").toString())
+        etEmpName.setText(intent.getStringExtra("PkName").toString())
+        etEmpAge.setText(intent.getStringExtra("PkLv").toString())
+        etEmpSalary.setText(intent.getStringExtra("PkWeight").toString())
 
         mDialog.setTitle("Updating $empName Record")
 
