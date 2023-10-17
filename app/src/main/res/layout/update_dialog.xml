@@ -6,28 +6,28 @@
     android:padding="10dp">
 
     <EditText
-        android:id="@+id/etEmpName"
+        android:id="@+id/etPokeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Employee Name"
+        android:hint="Pokemon Name"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/etEmpAge"
+        android:id="@+id/etPokeLv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Employee Age" />
+        android:hint="Pokemon level" />
 
     <EditText
-        android:id="@+id/etEmpSalary"
+        android:id="@+id/etPokeWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Employee Salary"
+        android:hint="Pokemon Weight"
         android:inputType="textPersonName" />
 
     <Button

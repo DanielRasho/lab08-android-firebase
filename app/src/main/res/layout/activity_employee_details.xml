@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp id"
+                    android:text="Id"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -73,7 +73,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpId"
+                    android:id="@+id/tvPokeId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -91,7 +91,7 @@
 
 
         <LinearLayout
-            android:id="@+id/contact_lin"
+            android:id="@+id/name_lin"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp Name"
+                    android:text="Name"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -122,7 +122,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpName"
+                    android:id="@+id/tvPokeName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp Age"
+                    android:text="Level"
                     android:textColor="@color/black"
                     android:textSize="15sp"
 
@@ -175,7 +175,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpAge"
+                    android:id="@+id/tvLv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -215,7 +215,7 @@
                     android:layout_gravity="center"
 
                     android:gravity="center"
-                    android:text="Emp Salary"
+                    android:text="Weight (kg)"
                     android:textColor="@color/black"
                     android:textSize="15sp"
 
@@ -230,7 +230,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpSalary"
+                    android:id="@+id/tvPokeWeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
