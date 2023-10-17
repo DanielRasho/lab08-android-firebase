@@ -62,11 +62,11 @@ class PokemonDetailsActivity : AppCompatActivity() {
     private fun deleteRecord(
         id: String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Employees").child(id)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Pokemons").child(id)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {
-            Toast.makeText(this, "Employee data deleted", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Pokemon data deleted", Toast.LENGTH_LONG).show()
 
             val intent = Intent(this, FetchingActivity::class.java)
             finish()
