@@ -11,10 +11,10 @@ import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 
 class PokemonDetailsActivity : AppCompatActivity() {
-    private lateinit var tvEmpId: TextView
-    private lateinit var tvEmpName: TextView
-    private lateinit var tvEmpAge: TextView
-    private lateinit var tvEmpSalary: TextView
+    private lateinit var tvPkId: TextView
+    private lateinit var tvPkName: TextView
+    private lateinit var tvPkLv: TextView
+    private lateinit var tvPkWeight: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
 
@@ -28,34 +28,34 @@ class PokemonDetailsActivity : AppCompatActivity() {
 
         btnUpdate.setOnClickListener {
             openUpdateDialog(
-                intent.getStringExtra("empId").toString(),
-                intent.getStringExtra("empName").toString()
+                intent.getStringExtra("pkId").toString(),
+                intent.getStringExtra("pkName").toString()
             )
         }
 
         btnDelete.setOnClickListener {
             deleteRecord(
-                intent.getStringExtra("empId").toString()
+                intent.getStringExtra("pkId").toString()
             )
         }
 
     }
 
     private fun initView() {
-        tvEmpId = findViewById(R.id.tvEmpId)
-        tvEmpName = findViewById(R.id.tvEmpName)
-        tvEmpAge = findViewById(R.id.tvEmpAge)
-        tvEmpSalary = findViewById(R.id.tvEmpSalary)
+        tvPkId = findViewById(R.id.tvPkId)
+        tvPkName = findViewById(R.id.tvPkName)
+        tvPkLv = findViewById(R.id.tvPkLv)
+        tvPkWeight = findViewById(R.id.tvPkWeight)
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
     }
 
     private fun setValuesToViews() {
-        tvEmpId.text = intent.getStringExtra("empId")
-        tvEmpName.text = intent.getStringExtra("empName")
-        tvEmpAge.text = intent.getStringExtra("empAge")
-        tvEmpSalary.text = intent.getStringExtra("empSalary")
+        tvPkId.text = intent.getStringExtra("pkId")
+        tvPkName.text = intent.getStringExtra("pkName")
+        tvPkLv.text = intent.getStringExtra("pkLv")
+        tvPkWeight.text = intent.getStringExtra("pkWeight")
 
     }
 
@@ -92,9 +92,9 @@ class PokemonDetailsActivity : AppCompatActivity() {
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
-        etEmpName.setText(intent.getStringExtra("empName").toString())
-        etEmpAge.setText(intent.getStringExtra("empAge").toString())
-        etEmpSalary.setText(intent.getStringExtra("empSalary").toString())
+        etEmpName.setText(intent.getStringExtra("pkName").toString())
+        etEmpAge.setText(intent.getStringExtra("pkLv").toString())
+        etEmpSalary.setText(intent.getStringExtra("pkWeight").toString())
 
         mDialog.setTitle("Updating $empName Record")
 
@@ -109,12 +109,12 @@ class PokemonDetailsActivity : AppCompatActivity() {
                 etEmpSalary.text.toString()
             )
 
-            Toast.makeText(applicationContext, "Employee Data Updated", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Pokemon Data Updated", Toast.LENGTH_LONG).show()
 
             //we are setting updated data to our textviews
-            tvEmpName.text = etEmpName.text.toString()
-            tvEmpAge.text = etEmpAge.text.toString()
-            tvEmpSalary.text = etEmpSalary.text.toString()
+            tvPkName.text = etEmpName.text.toString()
+            tvPkLv.text = etEmpAge.text.toString()
+            tvPkWeight.text = etEmpSalary.text.toString()
 
             alertDialog.dismiss()
         }
@@ -126,7 +126,7 @@ class PokemonDetailsActivity : AppCompatActivity() {
         age: String,
         salary: String
     ) {
-        val dbRef = FirebaseDatabase.getInstance().getReference("Employees").child(id)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Pokemons").child(id)
         val empInfo = PokemonModel(id, name, age, salary)
         dbRef.setValue(empInfo)
     }

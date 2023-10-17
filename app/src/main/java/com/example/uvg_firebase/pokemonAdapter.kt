@@ -35,7 +35,7 @@ class pokemonAdapter(private val empList: ArrayList<PokemonModel>) :
 
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
 
-        val tvEmpName : TextView = itemView.findViewById(R.id.tvEmpName)
+        val tvEmpName : TextView = itemView.findViewById(R.id.tvPkName)
 
         init {
             itemView.setOnClickListener {

@@ -20,9 +20,9 @@ class InsertionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insertion)
 
-        etEmpName = findViewById(R.id.etEmpName)
-        etEmpAge = findViewById(R.id.etEmpAge)
-        etEmpSalary = findViewById(R.id.etEmpSalary)
+        etEmpName = findViewById(R.id.etPkName)
+        etEmpAge = findViewById(R.id.etLv)
+        etEmpSalary = findViewById(R.id.etPkWeight)
         btnSaveData = findViewById(R.id.btnSave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Employees")
