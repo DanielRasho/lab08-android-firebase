@@ -58,9 +58,9 @@ class FetchingActivity : AppCompatActivity() {
                             val intent = Intent(this@FetchingActivity, PokemonDetailsActivity::class.java)
 
                             //put extras
-                            intent.putExtra("empId", empList[position].empId)
-                            intent.putExtra("empName", empList[position].empName)
-                            intent.putExtra("empAge", empList[position].empAge)
+                            intent.putExtra("empId", empList[position].PkId)
+                            intent.putExtra("empName", empList[position].PkName)
+                            intent.putExtra("empAge", empList[position].PkLv)
                             intent.putExtra("empSalary", empList[position].empSalary)
                             startActivity(intent)
                         }

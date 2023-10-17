@@ -26,7 +26,7 @@ class pokemonAdapter(private val pokemonList: ArrayList<PokemonModel>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentEmp = pokemonList[position]
-        holder.tvEmpName.text = currentEmp.empName
+        holder.tvEmpName.text = currentEmp.PkName
     }
 
     override fun getItemCount(): Int {
