@@ -20,9 +20,9 @@ class InsertionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insertion)
 
-        etPokemonName = findViewById(R.id.etEmpName)
-        etPokemonLevel = findViewById(R.id.etEmpAge)
-        etPokemonWeight = findViewById(R.id.etEmpSalary)
+        etPokemonName = findViewById(R.id.etPkName)
+        etPokemonLevel = findViewById(R.id.etLv)
+        etPokemonWeight = findViewById(R.id.etPkWeight)
         btnSaveData = findViewById(R.id.btnSave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Pokemons")

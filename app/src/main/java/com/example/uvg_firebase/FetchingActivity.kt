@@ -23,7 +23,7 @@ class FetchingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fetching)
 
-        empRecyclerView = findViewById(R.id.rvEmp)
+        empRecyclerView = findViewById(R.id.rvPk)
         empRecyclerView.layoutManager = LinearLayoutManager(this)
         empRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
@@ -39,7 +39,7 @@ class FetchingActivity : AppCompatActivity() {
         empRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Employees")
+        dbRef = FirebaseDatabase.getInstance().getReference("Pokemons")
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -58,10 +58,10 @@ class FetchingActivity : AppCompatActivity() {
                             val intent = Intent(this@FetchingActivity, PokemonDetailsActivity::class.java)
 
                             //put extras
-                            intent.putExtra("empId", empList[position].PkId)
-                            intent.putExtra("empName", empList[position].PkName)
-                            intent.putExtra("empAge", empList[position].PkLv)
-                            intent.putExtra("empSalary", empList[position].PkWeight)
+                            intent.putExtra("PkId", empList[position].PkId)
+                            intent.putExtra("PkName", empList[position].PkName)
+                            intent.putExtra("PkLv", empList[position].PkLv)
+                            intent.putExtra("PkWeight", empList[position].PkWeight)
                             startActivity(intent)
                         }
 
