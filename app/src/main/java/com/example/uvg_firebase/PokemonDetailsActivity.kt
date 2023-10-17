@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 
-class EmployeeDetailsActivity : AppCompatActivity() {
+class PokemonDetailsActivity : AppCompatActivity() {
     private lateinit var tvEmpId: TextView
     private lateinit var tvEmpName: TextView
     private lateinit var tvEmpAge: TextView
@@ -127,7 +127,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         salary: String
     ) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Employees").child(id)
-        val empInfo = EmployeeModel(id, name, age, salary)
+        val empInfo = PokemonModel(id, name, age, salary)
         dbRef.setValue(empInfo)
     }
 

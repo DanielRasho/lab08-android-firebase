@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class EmpAdapter(private val empList: ArrayList<EmployeeModel>) :
-    RecyclerView.Adapter<EmpAdapter.ViewHolder>() {
+class pokemonAdapter(private val empList: ArrayList<PokemonModel>) :
+    RecyclerView.Adapter<pokemonAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
 

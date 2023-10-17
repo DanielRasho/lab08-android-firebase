@@ -13,7 +13,7 @@
         android:theme="@style/Theme.UVG_Firebase"
         tools:targetApi="31">
         <activity
-            android:name=".EmployeeDetailsActivity"
+            android:name=".PokemonDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".FetchingActivity"
