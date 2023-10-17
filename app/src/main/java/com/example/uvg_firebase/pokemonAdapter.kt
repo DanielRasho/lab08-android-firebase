@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class pokemonAdapter(private val empList: ArrayList<PokemonModel>) :
+class pokemonAdapter(private val pokemonList: ArrayList<PokemonModel>) :
     RecyclerView.Adapter<pokemonAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
@@ -25,12 +25,12 @@ class pokemonAdapter(private val empList: ArrayList<PokemonModel>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentEmp = empList[position]
+        val currentEmp = pokemonList[position]
         holder.tvEmpName.text = currentEmp.empName
     }
 
     override fun getItemCount(): Int {
-        return empList.size
+        return pokemonList.size
     }
 
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {

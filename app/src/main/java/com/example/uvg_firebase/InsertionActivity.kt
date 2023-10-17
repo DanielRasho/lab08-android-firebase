@@ -9,9 +9,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class InsertionActivity : AppCompatActivity() {
-    private lateinit var etEmpName: EditText
-    private lateinit var etEmpAge: EditText
-    private lateinit var etEmpSalary: EditText
+    private lateinit var etPokemonName: EditText
+    private lateinit var etPokemonLevel: EditText
+    private lateinit var etPokemonWeight: EditText
     private lateinit var btnSaveData: Button
 
     private lateinit var dbRef: DatabaseReference
@@ -20,12 +20,12 @@ class InsertionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insertion)
 
-        etEmpName = findViewById(R.id.etPkName)
-        etEmpAge = findViewById(R.id.etLv)
-        etEmpSalary = findViewById(R.id.etPkWeight)
+        etPokemonName = findViewById(R.id.etEmpName)
+        etPokemonLevel = findViewById(R.id.etEmpAge)
+        etPokemonWeight = findViewById(R.id.etEmpSalary)
         btnSaveData = findViewById(R.id.btnSave)
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Employees")
+        dbRef = FirebaseDatabase.getInstance().getReference("Pokemons")
 
         btnSaveData.setOnClickListener {
             saveEmployeeData()
@@ -35,31 +35,31 @@ class InsertionActivity : AppCompatActivity() {
     private fun saveEmployeeData() {
 
         //getting values
-        val empName = etEmpName.text.toString()
-        val empAge = etEmpAge.text.toString()
-        val empSalary = etEmpSalary.text.toString()
+        val pokemonName = etPokemonName.text.toString()
+        val pokemonLevel = etPokemonLevel.text.toString()
+        val pokemonWeight = etPokemonWeight.text.toString()
 
-        if (empName.isEmpty()) {
-            etEmpName.error = "Please enter name"
+        if (pokemonName.isEmpty()) {
+            etPokemonName.error = "Please enter name"
         }
-        if (empAge.isEmpty()) {
-            etEmpAge.error = "Please enter age"
+        if (pokemonLevel.isEmpty()) {
+            etPokemonLevel.error = "Please enter level"
         }
-        if (empSalary.isEmpty()) {
-            etEmpSalary.error = "Please enter salary"
+        if (pokemonWeight.isEmpty()) {
+            etPokemonWeight.error = "Please enter weight"
         }
 
         val empId = dbRef.push().key!!
 
-        val employee = PokemonModel(empId, empName, empAge, empSalary)
+        val employee = PokemonModel(empId, pokemonName, pokemonLevel, pokemonWeight)
 
         dbRef.child(empId).setValue(employee)
             .addOnCompleteListener {
                 Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG).show()
 
-                etEmpName.text.clear()
-                etEmpAge.text.clear()
-                etEmpSalary.text.clear()
+                etPokemonName.text.clear()
+                etPokemonLevel.text.clear()
+                etPokemonWeight.text.clear()
 
 
             }.addOnFailureListener { err ->
